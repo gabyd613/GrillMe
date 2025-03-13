@@ -25,7 +25,7 @@ router.get('/random', async (req, res) => {
 })
 
 // Create flashcard
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
   try {
     const { question, answer, category } = req.body;
     const newFlashcard = new Flashcard({
@@ -42,10 +42,21 @@ router.post('/', async (req, res) => {
 })
 
 // Update flashcard
-router.put('', async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     
   } catch (error) {
     return res.status(500).json({ message: 'Error updating flashcard', error: error})
   }
 })
+
+// Delete flashcard
+router.put('/:id', async (req, res) => {
+  try {
+    
+  } catch (error) {
+    return res.status(500).json({ message: 'Error deleting flashcard', error: error})
+  }
+})
+
+export default router;
